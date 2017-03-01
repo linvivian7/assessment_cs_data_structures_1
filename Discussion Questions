@@ -1,0 +1,88 @@
+Part 1: Discussion Questions
+
+Runtime
+
+1. When calculating the Big O notation for a particular algorithm, it’s necessary to consider the length of time it takes for the algorithm to run as the algorithm’s workload approaches infinity. You can think of the workload as the number of tasks required to complete a job. What determines the workload of figuring out whether your box of animal crackers contains an elephant?
+
+    - O(N); where N is the number of crackers, and the process is each cracker being taken out 
+      of the box.
+
+
+2. Order the following runtimes in descending order of efficiency (that is, fastest runtimes first, slowest last) as n approaches infinity:
+
+    (fastest)
+    O(1)
+    O(log n)
+    O(n)
+    O(n log n)
+    O(2n)
+    O(n2)
+    (slowest)
+
+
+Stacks and Queues
+
+1. In the following cases, would a stack or queue be a more appropriate data structure?
+
+    1. (stack) The process of loading and unloading pallets onto a flatbed truck
+    2. (queue) Putting bottle caps on bottles of beer as they roll down an assembly line
+    3. (queue) Calculating the solution to this mathematical expression: 2 + (7 * 4) - (3 / 2)
+
+2. Describe two more situations where a queue would be an appropriate data structure.
+
+    1. Restaurant walk-ins, seat the first arrivals of that # of people first. 
+    2. Eating food that is purchased first because it'll expire sooner
+
+3. Describe two more situations where a stack would be an appropriate data structure.
+
+    1. Getting clean towels from the linen closet. Doesn't matter because they're all (hopefully)
+       clean.
+    2. Eating the french fries from the top-down of the McDonald's carton. 
+
+
+Linked Lists
+
+1. Given the linked list below, which are the nodes? What is the data for each node? Where is the head? Where is the tail? (Please be as specific as possible — exactly which parts of the diagram correspond to each part? Arrows? Boxes? Text?)
+
+    - The bigger rectangles represent the nodes, and the data include: "Apple", "Berry", "Cherry"
+      for each node. Arrows are pointers. In this case, it is a singly-linked list as there is only one 
+      pointer from each node to the next node. The tail's next pointer points to None. The singly-linked
+      list has a head that points to a node that has "Apple" as its data.
+
+2. What’s the difference between doubly- and singly-linked lists?
+    
+    - A doubly-linked list has two pointers from each node, one that points to node.prev and the
+      other that points to node.next. This enables traversal to the previous node. 
+    
+
+3. Why is it faster to append to a linked list if we keep track of the tail as an attribute?
+
+    - Because drawing a pointer to the new node and moving the tail to the new node, is an O(1)
+      operation when we know the tail node. Whereas if we didn't, we would have to traverse the entire
+      list to find it. That would add an O(N) run-time. 
+
+
+Trees
+
+1. Given the tree above, in what order would a Breadth First Search (BFS) algorithm visit each node until finding burritos (starting at food)? Just list the order of nodes visited; no need to recreate the state of the algorithm data in your answer.
+
+    - Assuming that the next child node is Italian, BFS exhausted all nodes at that level (Indian, Mexican) before moving onto the children of Italian, children of Indian, childrean of Mexican, 
+    until it finds burritos there. At that points, the BFS would terminate. No "grandchildren" would
+    be visited.
+
+
+2. Given the tree above, in what order would a Depth First Search (DFS) algorithm visit each node until finding Chicago-style (starting at food)? Just list the order of nodes visited; no need to recreate the state of the algorithm data in your answer.
+
+    - Best case, if we're lucky, we would visit food-Italian-pizza-Chicago-style and terminate
+    - Worst case, we can do food-Mexican-tacos, enchiladas, burritos, Indian-tikka masala-saag,
+    - Italian-lasagna-pizza-Sicilian-New York-thin crust before arriving at Chicago style.
+
+3. How is a binary search tree different from other trees?
+
+    - Binary search trees allow for a lg n search time instead of O(N), which is common for arrays and 
+      trees without the following traits to them:
+
+      1) data stored must be inherently sortable in binary (numbers, alphabetical words)
+      2) like other b-trees; constraint of having two children 
+
+
